@@ -18,7 +18,7 @@ __Legendary items__
 - quality altijd veranderd niet
 - quality is 80
 
-__Pas Due items__
+__Backstage items__
 - “backstage passes”	
 - Quality increases by 2 when there are 10 days or less and by 3 when there are 5 days or less
 - Wanneer sellin 0 dan quality 0 

@@ -22,7 +22,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void testPastDeuItemSellIn1QualityIncreasedWith3() {
+    void testBackstageItemSellIn1QualityIncreasedWith3() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 10) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -54,7 +54,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void testPasDueItemBackstageSellInn11OrLessQualityIncreasedBy1() {
+    void testBackstageItemSellInn11OrLessQualityIncreasedBy1() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 11, 10) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -62,7 +62,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void testPasDueItemBackstageSellInn10OrLessQualityIncreasedBy1() {
+    void testBackstageItemSellInn10OrLessQualityIncreasedBy1() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 10, 49) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -70,7 +70,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void testPasDueItemBackstageSellInn5OrLessQualityIncreasesBy3() {
+    void testBackstageItemSellInn5OrLessQualityIncreasesBy3() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 5, 49) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -78,7 +78,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void testPasDueItemBackstageSellInn6OrLessQualityIncreasesBy2() {
+    void testBackstageItemSellInn6OrLessQualityIncreasesBy2() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 6, -5) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
@@ -94,7 +94,7 @@ class GildedRoseTest {
     }
 
     @Test
-    void testPasDueItemBackstageSellInn0OrLessSetQuality0() {
+    void testBackstageItemSellInn0OrLessSetQuality0() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
