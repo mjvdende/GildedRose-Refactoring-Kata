@@ -1,24 +1,11 @@
 package com.gildedrose;
 
-public class BackstagItem extends Item{
+public class BackstagItem implements ItemUpdater {
 
-    private String name;
-    private int sellIn;
-    private int quality;
+    public void update(Item item) {
 
-    public BackstagItem(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+//TODO
+
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getSellIn() {
-        return sellIn;
-    }
-
-    public int getQuality() {
-        return quality;
-    }
 }

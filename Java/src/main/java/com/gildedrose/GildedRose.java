@@ -1,5 +1,8 @@
 package com.gildedrose;
 
+import static com.gildedrose.UpdateFactory.updateFor;
+
+
 class GildedRose {
     Item[] items;
 
@@ -13,7 +16,8 @@ class GildedRose {
                     && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (items[i].quality > 0) {
                     if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                        items[i].quality = items[i].quality - 1;
+                        updateFor(items[i]).update(items[i]);
+//                        items[i].quality = items[i].quality - 1;
                     }
                 }
             } else {
@@ -35,7 +39,7 @@ class GildedRose {
                 }
             }
 
-            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
+            if (!items[i].name.equals("Sulfuras, Hand of Ragnaros") & !items[i].name.equals("normal item") & !items[i].name.equals("John")) {
                 items[i].sellIn = items[i].sellIn - 1;
             }
 
@@ -44,7 +48,8 @@ class GildedRose {
                     if (!items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                         if (items[i].quality > 0) {
                             if (!items[i].name.equals("Sulfuras, Hand of Ragnaros")) {
-                                items[i].quality = items[i].quality - 1;
+//                                "normal item" al bijgewerkt door updater
+//                                items[i].quality = items[i].quality - 1;
                             }
                         }
                     } else {

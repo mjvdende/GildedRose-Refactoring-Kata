@@ -1,24 +1,12 @@
 package com.gildedrose;
 
-public class ConjuredItem extends Item{
+public class ConjuredItem implements ItemUpdater {
 
-    private String name;
-    private int sellIn;
-    private int quality;
+    public void update(Item item) {
 
-    public ConjuredItem(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+//TODO
+
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public int getSellIn() {
-        return sellIn;
-    }
-
-    public int getQuality() {
-        return quality;
-    }
 }

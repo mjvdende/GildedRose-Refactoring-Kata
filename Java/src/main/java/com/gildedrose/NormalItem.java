@@ -1,23 +1,28 @@
 package com.gildedrose;
 
-public class NormalItem extends Item {
-    private String name;
-    private int sellIn;
-    private int quality;
+public class NormalItem implements ItemUpdater {
 
-    public NormalItem(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+    public void update(Item item) {
+
+        if(canLowerQuality(item)) {
+            item.quality--;
+            if(pastExpirationDate(item)) {
+                item.quality--;
+            }
+        }
+
+        item.sellIn--;
+
     }
 
-    public String getName() {
-        return name;
+    private boolean pastExpirationDate(Item item) {
+        return item.sellIn <= 0;
     }
 
-    public int getSellIn() {
-        return sellIn;
+    private boolean canLowerQuality(Item item) {
+        return item.quality > 0;
     }
 
-    public int getQuality() {
-        return quality;
-    }
+
+
 }

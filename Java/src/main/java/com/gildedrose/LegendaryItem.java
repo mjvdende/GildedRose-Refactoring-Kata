@@ -1,24 +1,12 @@
 package com.gildedrose;
 
-public class LegendaryItem extends Item{
+public class LegendaryItem implements ItemUpdater {
 
-    private String name;
-    private int sellIn;
-    private int quality;
+    public void update(Item item) {
 
-    public LegendaryItem(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+//TODO
+
     }
 
-    public String getName() {
-        return name;
-    }
 
-    public int getSellIn() {
-        return sellIn;
-    }
-
-    public int getQuality() {
-        return quality;
-    }
 }

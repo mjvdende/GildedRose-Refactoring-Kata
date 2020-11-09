@@ -1,24 +1,11 @@
 package com.gildedrose;
 
-public class QualityItem extends Item{
-    private String name;
-    private int sellIn;
-    private int quality;
+public class QualityItem implements ItemUpdater {
 
+    public void update(Item item) {
 
-    public QualityItem(String name, int sellIn, int quality) {
-        super(name, sellIn, quality);
+//TODO
+
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getSellIn() {
-        return sellIn;
-    }
-
-    public int getQuality() {
-        return quality;
-    }
 }
