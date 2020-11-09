@@ -25,7 +25,7 @@ public class UpdateFactory {
             return new LegendaryItem();
         }
         else if(isBackstage(currentItem)) {
-            return new BackstagItem();
+            return new BackstageItem();
         }
         else if(isConjured(currentItem)) {
             return new ConjuredItem();
