@@ -2,11 +2,7 @@ package com.gildedrose;
 
 public class LegendaryItem implements ItemUpdater {
 
-    public void update(Item item) {
-
-//TODO
-
+    public Item update(Item item) {
+        return item;
     }
-
-
 }

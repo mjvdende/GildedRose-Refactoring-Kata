@@ -2,10 +2,11 @@ package com.gildedrose;
 
 public class QualityItem implements ItemUpdater {
 
-    public void update(Item item) {
+    public Item update(Item item) {
 
 //TODO
 
+        return item;
     }
 
 }

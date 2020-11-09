@@ -2,7 +2,7 @@ package com.gildedrose;
 
 public class NormalItem implements ItemUpdater {
 
-    public void update(Item item) {
+    public Item update(Item item) {
 
         if(canLowerQuality(item)) {
             item.quality--;
@@ -13,6 +13,7 @@ public class NormalItem implements ItemUpdater {
 
         item.sellIn--;
 
+        return item;
     }
 
     private boolean pastExpirationDate(Item item) {
