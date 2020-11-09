@@ -12,6 +12,12 @@ class GildedRose {
 
     public void updateQuality() {
         for (int i = 0; i < items.length; i++) {
+
+            // make sure normal item quality below 0 gets updated
+//            if (items[i].name.equals("normal item") | items[i].name.equals("John")){
+//                updateFor(items[i]).update(items[i]);
+//            }
+            // if normal
             if (!items[i].name.equals("Aged Brie")
                     && !items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {
                 if (items[i].quality > 0) {
@@ -19,8 +25,11 @@ class GildedRose {
                         updateFor(items[i]).update(items[i]);
 //                        items[i].quality = items[i].quality - 1;
                     }
+                } else {
+                    updateFor(items[i]).update(items[i]);
                 }
             } else {
+                // if quality, backstage and legendary?
                 if (items[i].quality < 50) {
                     items[i].quality = items[i].quality + 1;
                     if (items[i].name.equals("Backstage passes to a TAFKAL80ETC concert")) {

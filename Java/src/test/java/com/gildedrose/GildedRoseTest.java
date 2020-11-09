@@ -7,10 +7,42 @@ class GildedRoseTest {
 
     @Test
     void testUpdateQuality() {
-        Item[] items = new Item[] { new Item("foo", 0, 0) };
+        Item[] items = new Item[] { new Item("normal item", 0, 0) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("foo, -1, 0", app.items[0].toString());
+        assertEquals("normal item, -1, 0", app.items[0].toString());
+    }
+
+    @Test
+    void testNormalItemSellDatePassedQualityDegradesTwiceAsFastMinus2() {
+        Item[] items = new Item[] { new Item("normal item", -1, -1) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals("normal item, -2, -1", app.items[0].toString());
+    }
+
+    @Test
+    void testNormalItemSellDatePassedQualityDegradesTwiceAsFastMinus2Edge1() {
+        Item[] items = new Item[] { new Item("normal item", 0, 1) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals("normal item, -1, 0", app.items[0].toString());
+    }
+
+    @Test
+    void testNormalItemQualityDecreased1() {
+        Item[] items = new Item[] { new Item("normal item", 22, 43) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals("normal item, 21, 42", app.items[0].toString());
+    }
+
+    @Test
+    void testNormalItemSellDatePassedQualityDegradesTwiceAsFast() {
+        Item[] items = new Item[] { new Item("normal item", -1, 10) };
+        GildedRose app = new GildedRose(items);
+        app.updateQuality();
+        assertEquals("normal item, -2, 8", app.items[0].toString());
     }
 
     @Test
@@ -38,11 +70,11 @@ class GildedRoseTest {
     }
 
     @Test
-    void testNormalItemQualityDecreased1() {
-        Item[] items = new Item[] { new Item("normal item", 22, 43) };
+    void testLegendaryItemSellInMin1() {
+        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", -1, 80) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("normal item, 21, 42", app.items[0].toString());
+        assertEquals("Sulfuras, Hand of Ragnaros, -1, 80", app.items[0].toString());
     }
 
     @Test
@@ -86,14 +118,6 @@ class GildedRoseTest {
     }
 
     @Test
-    void testQualityItemSellIn0QualityIncreasesWith2() {
-        Item[] items = new Item[] { new Item("Aged Brie", 0, 10) };
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-        assertEquals("Aged Brie, -1, 12", app.items[0].toString());
-    }
-
-    @Test
     void testBackstageItemSellInn0OrLessSetQuality0() {
         Item[] items = new Item[] { new Item("Backstage passes to a TAFKAL80ETC concert", 0, 10) };
         GildedRose app = new GildedRose(items);
@@ -102,19 +126,11 @@ class GildedRoseTest {
     }
 
     @Test
-    void testNormalItemSellDatePassedQualityDegradesTwiceAsFast() {
-        Item[] items = new Item[] { new Item("normal item", -1, 10) };
+    void testQualityItemSellIn0QualityIncreasesWith2() {
+        Item[] items = new Item[] { new Item("Aged Brie", 0, 10) };
         GildedRose app = new GildedRose(items);
         app.updateQuality();
-        assertEquals("normal item, -2, 8", app.items[0].toString());
-    }
-
-    @Test
-    void testLegendaryItemSellInMin1() {
-        Item[] items = new Item[] { new Item("Sulfuras, Hand of Ragnaros", -1, 80) };
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-        assertEquals("Sulfuras, Hand of Ragnaros, -1, 80", app.items[0].toString());
+        assertEquals("Aged Brie, -1, 12", app.items[0].toString());
     }
 
     @Test
@@ -131,14 +147,6 @@ class GildedRoseTest {
         GildedRose app = new GildedRose(items);
         app.updateQuality();
         assertEquals("normal item, 1, 1", app.items[0].toString());
-    }
-
-    @Test
-    void testNormalItemSellDatePassedQualityDegradesTwiceAsFastMinus2() {
-        Item[] items = new Item[] { new Item("normal item", -1, -1) };
-        GildedRose app = new GildedRose(items);
-        app.updateQuality();
-        assertEquals("normal item, -2, -3", app.items[0].toString());
     }
 
 }
