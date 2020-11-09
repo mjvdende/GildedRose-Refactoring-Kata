@@ -16,7 +16,10 @@ public class NormalItem implements ItemUpdater {
     }
 
     private boolean pastExpirationDate(Item item) {
-        return item.sellIn <= 0;
+        if(canLowerQuality(item)){
+            return item.sellIn <= 0;
+        }
+        return false;
     }
 
     private boolean canLowerQuality(Item item) {
